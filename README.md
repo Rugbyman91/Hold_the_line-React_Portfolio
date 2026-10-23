@@ -1,16 +1,37 @@
-# React + Vite
+# Hold the Line
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Een autobattler in React: kies je facties, bouw een team in de shop
+en overleef 20 golven aan automatische gevechten.
 
-Currently, two official plugins are available:
+Speel het hier: https://rugbyman91.itch.io/hold-the-line
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Gameplay
+- Kies 1 tot 5 facties om je run mee te starten
+- Shop met 3 willekeurige eenheden, gefilterd op factie en tier;
+  eerste reroll gratis, daarna 1 goud
+- Eenheden kopen, verplaatsen en verkopen via drag-and-drop
+  tussen shop, team (8 plaatsen) en bench (5 plaatsen)
+- Drie gelijke eenheden worden samengevoegd tot een geëvolueerde versie
+- Automatisch turn based gevecht: frontrow wordt eerst aangevallen,
+  daarna de backrow; snelheid instelbaar op 1x, 2x of 3x
+- 20 golven met goudbeloning na elke gewonnen golf
 
-## React Compiler
+## Technologie
+React, Vite, React Router, CSS-animaties
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Hoe starten
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+## Technische keuzes
+- Gedeelde spelstate (goud, golf, team, bench) via React Router's
+  outlet context
+- Gevechtslus als async functie met een annuleringsvlag, zodat
+  een gevecht netjes stopt als de component verdwijnt
+- Data van eenheden en golven staat los van de componenten
+- Animaties via CSS-klassen die in de lus worden aan- en uitgezet
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Mogelijke uitbreidingen
+- Skills
+- Items (equip en use)
+- Neutral faction die standaard als factie meegeselecteerd wordt
